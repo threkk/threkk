@@ -3,7 +3,7 @@ import Head from 'next/head'
 interface HeadProps {
   title: string
   description: string
-  image: string
+  cover: string
   url: string
 }
 
@@ -13,7 +13,7 @@ export default function PageHead(props: HeadProps): JSX.Element {
       <title>{props.title}</title>
       <link rel='favicon' href='/favicon.ico' />
 
-      <title>props.title</title>
+      <title>{props.title}</title>
       <meta name='title' content={props.title} />
       <meta name='description' content={props.description} />
 
@@ -21,13 +21,13 @@ export default function PageHead(props: HeadProps): JSX.Element {
       <meta property='og:url' content={props.url} />
       <meta property='og:title' content={props.title} />
       <meta property='og:description' content={props.description} />
-      <meta property='og:image' content={props.image} />
+      <meta property='og:image' content={props.cover} />
 
       <meta property='twitter:card' content='summary_large_image' />
       <meta property='twitter:url' content={props.url} />
       <meta property='twitter:title' content={props.title} />
       <meta property='twitter:description' content={props.description} />
-      <meta property='twitter:image' content={props.image} />
+      <meta property='twitter:image' content={props.cover} />
 
       <meta name='robots' content='index,follow,noodp' />
       <meta name='googlebot' content='index,follow' />
