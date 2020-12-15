@@ -1,13 +1,7 @@
 @charset "utf-8";
 
-// $primary-color: #8FBB99; // Dark Sea Green
-$primary: #618fa0; // Steel Teal
-// $primary-color: #6279A1; // Blue Yoner
+$primary: #437085;
+$text: #ECEBE7;
 $dark: #2b303a; // Gunmetal
-// $secondary-color: #A7BBEC; // Wild Blue Yonder
 
 @import '../node_modules/bulma/bulma.sass';
-$text: $white-ter;
-// @import '../node_modules/spectre.css/src/spectre.scss';
-// @import '../node_modules/spectre.css/src/spectre-icons.scss';
-// @import '../node_modules/spectre.css/src/spectre-exp.scss';

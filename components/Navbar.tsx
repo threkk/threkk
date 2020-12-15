@@ -1,32 +1,40 @@
-import { useState } from 'react'
-import { getPages, File, LOCALE } from '../lib/files'
 import Link from 'next/link'
+import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import { useRouter } from 'next/router'
+import { useState } from 'react'
 
-export interface NavbarProps {
-  pages: File[]
-  active: string
-  locale?: LOCALE
+interface NavLink {
+  text: string
+  href: string
+  disabled?: boolean
 }
 
-export default function Navbar(props: NavbarProps) {
+const LINKS: NavLink[] = [
+  { text: 'Home', href: '/' },
+  { text: 'About', href: '/about' },
+  { text: 'Notes', href: 'https://medium.com/@threkk' },
+  { text: 'Projects', href: 'https://github.com/threkk' },
+  { text: 'Now', href: '/now' },
+]
+
+export default function Navbar() {
+  const router = useRouter()
   const [isActive, setActive] = useState(false)
   const toggleActive = () => setActive(!isActive)
 
-  const pages = props.pages.map((page) => {
-    return (
-      <>
-        <Link key={page.slug} href={`/${page.slug}`}>
-          <a
-            className={`navbar-item ${
-              props.active === page.slug ? 'is-active' : ''
-            }`}
-          >
-            {page.title}
-          </a>
-        </Link>
-      </>
-    )
-  })
+  const links = LINKS.map((page, idx) => (
+    <>
+      <Link key={idx} href={page.href}>
+        <a
+          className={`navbar-item ${
+            router.pathname === page.href ? 'is-active' : ''
+          }`}
+        >
+          {page.text}
+        </a>
+      </Link>
+    </>
+  ))
 
   return (
     <>
@@ -49,7 +57,7 @@ export default function Navbar(props: NavbarProps) {
           </a>
         </div>
         <div className={`navbar-menu ${isActive ? 'is-active' : ''}`}>
-          <div className='navbar-end'>{pages}</div>
+          <div className='navbar-end'>{links}</div>
         </div>
       </nav>
     </>
