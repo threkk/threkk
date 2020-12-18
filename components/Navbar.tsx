@@ -12,8 +12,8 @@ interface NavLink {
 const LINKS: NavLink[] = [
   { text: 'Home', href: '/' },
   { text: 'About', href: '/about' },
-  { text: 'Notes', href: 'https://medium.com/@threkk' },
   { text: 'Projects', href: 'https://github.com/threkk' },
+  { text: 'Articles', href: 'https://medium.com/@threkk' },
   { text: 'Now', href: '/now' },
 ]
 
@@ -24,7 +24,7 @@ export default function Navbar() {
 
   const links = LINKS.map((page, idx) => (
     <>
-      <Link key={idx} href={page.href}>
+      <Link key={page.text} href={page.href}>
         <a
           className={`navbar-item ${
             router.pathname === page.href ? 'is-active' : ''

@@ -15,7 +15,6 @@ interface HeadProps {
 
 export default function PageHead(props?: HeadProps): JSX.Element {
   const { title, description, cover, canonical } = props
-  console.log(title, description, cover, canonical)
   const router = useRouter()
 
   const url = new URL(router.asPath, BASE_URL)
@@ -23,7 +22,7 @@ export default function PageHead(props?: HeadProps): JSX.Element {
   return (
     <Head>
       <title>{props.title ?? BASE_TITLE}</title>
-      <link rel='favicon' href='/favicon.ico' />
+      <link rel='shortcut icon' type='image/favicon' href='/favicon.ico' />
 
       <meta name='title' content={title ?? BASE_TITLE} />
       <meta name='description' content={description ?? BASE_DESCRIPTION} />
@@ -56,6 +55,18 @@ export default function PageHead(props?: HeadProps): JSX.Element {
         name='viewport'
         content='width=device-width, initial-scale=1, shrink-to-fit=no'
       />
+
+      <link rel='favicon' href='/favicon.ico' />
+      <link rel='shortcut icon' type='image/favicon' href='/favicon.ico' />
+      <link rel='shortcut icon' type='image/png' href='/square.png' />
+      <link rel='apple-touch-icon' href='/square.png' />
+      <meta name='mobile-web-app-capable' />
+      <meta name='apple-mobile-web-app-capable' content='yes' />
+      <meta name='apple-mobile-web-app-status-bar-style' content='black' />
+
+      <link rel='me' href='https://twitter.com/threkk' />
+      <link rel='me' href='mailto:alberto@threkk.com' />
+      <link rel='me' href='https://github.com/threkk' />
     </Head>
   )
 }
