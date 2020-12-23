@@ -25,7 +25,7 @@ export default function Home() {
               </figure>
             </div>
             <div>
-              <div className='content'>
+              <div className='content has-font-family-serif'>
                 <h1 className='title mt-4'>
                   Hi, my name is <span className='p-given-name'>Alberto</span>
                 </h1>
@@ -36,8 +36,17 @@ export default function Home() {
               </div>
               <div className='content'>
                 <p className='is-size-5'>
-                  I am a <span className='p-role'>Software Engineer</span> from
-                  Spain based in <span className='p-city'>Amsterdam</span>,{' '}
+                  I am a{' '}
+                  <span
+                    style={{
+                      textDecoration: 'line-through',
+                      opacity: 0.6,
+                    }}
+                  >
+                    Internet Plumber
+                  </span>{' '}
+                  <span className='p-role'>Software Engineer</span> from Spain
+                  based in <span className='p-city'>Amsterdam</span>,{' '}
                   <span className='p-country-name'>The Netherlands</span>.
                   Currently, I am working at{' '}
                   <Link href='https://booking.com/'>

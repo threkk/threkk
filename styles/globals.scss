@@ -1,10 +1,14 @@
 @charset "utf-8";
 
 $primary: #437085;
-$text: #ECEBE7;
+$text: #ecebe7;
 $dark: #2b303a; // Gunmetal
 
 @import '../node_modules/bulma/bulma.sass';
 @import '../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
 @import '../node_modules/@fortawesome/fontawesome-free/scss/solid.scss';
 @import '../node_modules/@fortawesome/fontawesome-free/scss/brands.scss';
+
+.has-font-family-serif {
+  font-family: charter, Georgia, Cambria, 'Times New Roman', Times, serif;
+}

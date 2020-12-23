@@ -17,6 +17,21 @@ const LINKS: NavLink[] = [
   { text: 'Now', href: '/now' },
 ]
 
+const EXTERNAL_LINK = (
+  <span className='icon is-small ml-1 is-unselectable' style={{ opacity: 0.3 }}>
+    <i className='fas fa-fw fa-external-link-alt'></i>
+  </span>
+)
+
+function isExternalLink(u: string): boolean {
+  try {
+    const url = new URL(u)
+    return true
+  } catch {
+    return false
+  }
+}
+
 export default function Navbar() {
   const router = useRouter()
   const [isActive, setActive] = useState(false)
@@ -31,6 +46,7 @@ export default function Navbar() {
           }`}
         >
           {page.text}
+          {isExternalLink(page.href) ? EXTERNAL_LINK : ''}
         </a>
       </Link>
     </>
