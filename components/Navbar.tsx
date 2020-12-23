@@ -12,8 +12,8 @@ interface NavLink {
 const LINKS: NavLink[] = [
   { text: 'Home', href: '/' },
   { text: 'About', href: '/about' },
-  { text: 'Projects', href: 'https://github.com/threkk' },
-  { text: 'Articles', href: 'https://medium.com/@threkk' },
+  { text: 'Projects', href: 'https://github.com/threkk/' },
+  { text: 'Articles', href: 'https://threkk.medium.com/' },
   { text: 'Now', href: '/now' },
 ]
 
