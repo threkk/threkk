@@ -14,7 +14,10 @@ const LINKS: NavLink[] = [
   { text: 'About', href: '/about' },
   { text: 'Projects', href: 'https://github.com/threkk/' },
   { text: 'Articles', href: 'https://threkk.medium.com/' },
-  { text: 'Now', href: '/now' },
+  {
+    text: 'Now',
+    href: 'https://www.notion.so/threkk/Now-f120106f4eea4f6895589f061cb548ad',
+  },
 ]
 
 const EXTERNAL_LINK = (
