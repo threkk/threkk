@@ -13,9 +13,9 @@ export type File = {
   lang: LOCALE
   slug: string
   content: string
-  published: boolean 
+  published: boolean
   tags: string[]
-  canonical_url
+  canonical_url?: string
 }
 
 type RawContent = {
@@ -55,6 +55,8 @@ export async function getPosts(): Promise<File[]> {
       date: data.date.toISOString() ?? null,
       lang: data.lang ?? 'en',
       slug: raw.filename,
+      tags: [],
+      published: false,
       content,
     }
     files.push(file)
