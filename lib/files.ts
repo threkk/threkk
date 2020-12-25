@@ -13,6 +13,9 @@ export type File = {
   lang: LOCALE
   slug: string
   content: string
+  published: boolean 
+  tags: string[]
+  canonical_url
 }
 
 type RawContent = {

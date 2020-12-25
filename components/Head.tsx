@@ -48,7 +48,7 @@ export default function PageHead(props?: HeadProps): JSX.Element {
       <meta name='robots' content='index,follow,noodp' />
       <meta name='googlebot' content='index,follow' />
 
-      <link rel='canonical' href={canonical ?? router.asPath} />
+      <link rel='canonical' href={canonical ?? url.toString()} />
 
       <meta httpEquiv='x-ua-compatible' content='ie=edge' />
       <meta
