@@ -1,0 +1,21 @@
+[Unit]
+Description=threkk.com website
+Documentation=https://threkk.com
+After=network.target
+
+[Service]
+Environment=NODE_PORT=3000
+Environment=NODE_ENV=production
+Type=simple
+User=www
+Group=www
+ExecStartPre=/usr/bin/nodejs /mnt/agrax_earthshade/threkk.com/node_modules/.bin/next build
+ExecStart=/usr/bin/nodejs /mnt/agrax_earthshade/threkk.com/node_modules/.bin/next start -p $NODE_PORT
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=threkk.com
+RestartSec=10
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target]
