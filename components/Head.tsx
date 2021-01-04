@@ -2,8 +2,9 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 
 const BASE_URL = process.env.BASE_URL ?? 'https://threkk.com/'
-const BASE_TITLE = 'Alberto de Murga ∙ Amsterdam, The Netherlands'
-const BASE_DESCRIPTION = 'also known as threkk. Software, miniatures, books.'
+const BASE_TITLE = 'Alberto de Murga ∙ threkk'
+const BASE_DESCRIPTION =
+  'Based in Amsterdam, The Netherlands. Software, miniatures, books.'
 const BASE_COVER = '/cover.png'
 
 interface HeadProps {

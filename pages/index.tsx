@@ -18,7 +18,7 @@ export default function Home() {
               <figure className='image is-128x128'>
                 <img
                   className='is-rounded u-photo'
-                  src='/avatar.png'
+                  src='/avatar.jpg'
                   alt='My internet avatar'
                   title='This is also how my wife thinks I look'
                 />
@@ -58,8 +58,9 @@ export default function Home() {
                   <abbr title='Master of Science'>MSc.</abbr> in Software
                   Engineering at the{' '}
                   <Link href='https://uva.nl/'>
-                    <a className='has-text-primary'>Univeristy of Amsterdam</a>
+                    <a className='has-text-primary'>University of Amsterdam</a>
                   </Link>
+                  .
                 </p>
                 <ul
                   style={{

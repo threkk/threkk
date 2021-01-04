@@ -41,18 +41,16 @@ export default function Navbar() {
   const toggleActive = () => setActive(!isActive)
 
   const links = LINKS.map((page, idx) => (
-    <>
-      <Link key={page.text} href={page.href}>
-        <a
-          className={`navbar-item ${
-            router.pathname === page.href ? 'is-active' : ''
-          }`}
-        >
-          {page.text}
-          {isExternalLink(page.href) ? EXTERNAL_LINK : ''}
-        </a>
-      </Link>
-    </>
+    <Link key={page.text} href={page.href}>
+      <a
+        className={`navbar-item ${
+          router.pathname === page.href ? 'is-active' : ''
+        }`}
+      >
+        {page.text}
+        {isExternalLink(page.href) ? EXTERNAL_LINK : ''}
+      </a>
+    </Link>
   ))
 
   return (
