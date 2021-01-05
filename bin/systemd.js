@@ -16,7 +16,7 @@ Documentation=https://threkk.com
 After=network.target
 
 [Service]
-ExecStart=${node} ${next} start
+ExecStart=${node} ${next} start --hostname threkk.com --port 3000
 # Required on some systems
 WorkingDirectory=${dir}
 
@@ -31,7 +31,7 @@ SyslogIdentifier=threkk.com
 
 Type=simple
 User=${user}
-Environment=NODE_ENV=production PORT=3000
+Environment=NODE_ENV=production
 
 [Install]
 WantedBy=multi-user.target`
