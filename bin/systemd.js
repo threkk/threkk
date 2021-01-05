@@ -16,7 +16,7 @@ Documentation=https://threkk.com
 After=network.target
 
 [Service]
-ExecStart=${node} ${next} start --hostname threkk.com --port 3000
+ExecStart=${node} ${next} start --port 3000
 # Required on some systems
 WorkingDirectory=${dir}
 
