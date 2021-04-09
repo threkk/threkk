@@ -1,4 +1,4 @@
-import Head from '../components/Head'
+import Meta from '../components/Meta'
 import Link from 'next/link'
 import Navbar from '../components/Navbar'
 
@@ -7,7 +7,7 @@ export default function Home() {
   const icon = 'icon is-large has-text-primary'
   return (
     <>
-      <Head />
+      <Meta />
       <section className='hero is-dark is-fullheight'>
         <div className='hero-head'>
           <Navbar />
@@ -88,6 +88,13 @@ export default function Home() {
                     <Link href='https://github.com/threkk/'>
                       <a className={icon} title='github'>
                         <i className='fab fa-github-square fa-3x' />
+                      </a>
+                    </Link>
+                  </li>
+                  <li style={marginless}>
+                    <Link href='https://threkk.medium.com/'>
+                      <a className={icon} title='medium'>
+                        <i className='fab fa-medium fa-3x'></i>
                       </a>
                     </Link>
                   </li>

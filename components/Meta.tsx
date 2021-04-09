@@ -23,7 +23,6 @@ export default function PageHead(props?: HeadProps): JSX.Element {
   return (
     <Head>
       <title>{props.title ?? BASE_TITLE}</title>
-      <link rel='shortcut icon' type='image/favicon' href='/favicon.ico' />
 
       <meta name='title' content={title ?? BASE_TITLE} />
       <meta name='description' content={description ?? BASE_DESCRIPTION} />
@@ -46,28 +45,7 @@ export default function PageHead(props?: HeadProps): JSX.Element {
       />
       <meta property='twitter:image' content={cover ?? BASE_COVER} />
 
-      <meta name='robots' content='index,follow,noodp' />
-      <meta name='googlebot' content='index,follow' />
-
       <link rel='canonical' href={canonical ?? url.toString()} />
-
-      <meta httpEquiv='x-ua-compatible' content='ie=edge' />
-      <meta
-        name='viewport'
-        content='width=device-width, initial-scale=1, shrink-to-fit=no'
-      />
-
-      <link rel='favicon' href='/favicon.ico' />
-      <link rel='shortcut icon' type='image/favicon' href='/favicon.ico' />
-      <link rel='shortcut icon' type='image/png' href='/square.png' />
-      <link rel='apple-touch-icon' href='/square.png' />
-      <meta name='mobile-web-app-capable' />
-      <meta name='apple-mobile-web-app-capable' content='yes' />
-      <meta name='apple-mobile-web-app-status-bar-style' content='black' />
-
-      <link rel='me' href='https://twitter.com/threkk' />
-      <link rel='me' href='mailto:alberto@threkk.com' />
-      <link rel='me' href='https://github.com/threkk' />
     </Head>
   )
 }
