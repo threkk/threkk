@@ -27,6 +27,7 @@ const EXTERNAL_LINK = (
 
 function isExternalLink (u: string): boolean {
   try {
+    // eslint-disable-next-line no-new
     new URL(u)
     return true
   } catch {
