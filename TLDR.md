@@ -1,1 +1,0 @@
-Software engineer at @bookingcom. I write about tech, mostly *nix, JS & Go. Also life stuff, learning langauges and hobbies. Tweets are mine. EN/ES/FR/NL/KR
