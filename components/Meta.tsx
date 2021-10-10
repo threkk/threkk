@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 const BASE_URL = process.env.BASE_URL ?? 'https://threkk.com/'
 const BASE_TITLE = 'Alberto de Murga ∙ threkk'
 const BASE_DESCRIPTION =
-  'Based in Amsterdam, The Netherlands. Software, miniatures, books.'
+  'Software engineer at Booking.com. I write about tech, mostly *nix, JS & Go. Also life stuff, learning languages and hobbies.'
 const BASE_COVER = '/cover.png'
 
 interface HeadProps {
@@ -14,7 +14,7 @@ interface HeadProps {
   canonical?: string
 }
 
-export default function PageHead(props?: HeadProps): JSX.Element {
+export default function PageHead (props?: HeadProps) {
   const { title, description, cover, canonical } = props
   const router = useRouter()
 

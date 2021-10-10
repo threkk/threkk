@@ -13,7 +13,7 @@ export default function Avatar () {
         />
 
   return (
-      <figure className='image' style={{width, height}}>
+      <figure className='image' style={{ width, height }}>
         {image}
       </figure>
   )

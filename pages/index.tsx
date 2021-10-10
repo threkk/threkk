@@ -1,35 +1,34 @@
 import Meta from '../components/Meta'
 import Link from 'next/link'
 import Navbar from '../components/Navbar'
+import Avatar from '../components/Avatar'
 
-export default function Home() {
+import { useRouter } from 'next/router'
+
+export default function Home () {
   const marginless = { margin: 0 }
   const icon = 'icon is-large has-text-primary'
+  const router = useRouter()
+  const classes = `hero is-fullheight ${router.query.light ? '' : 'is-dark'}`
+
   return (
     <>
       <Meta />
-      <section className='hero is-dark is-fullheight'>
+      <section className={classes}>
         <div className='hero-head'>
           <Navbar />
         </div>
         <div className='hero-body h-card'>
           <div className='container is-flex-tablet is-flex-direction-row is-align-items-center'>
             <div className='content is-flex is-justify-content-center'>
-              <figure className='image is-128x128'>
-                <img
-                  className='is-rounded u-photo'
-                  src='/avatar.jpg'
-                  alt='My internet avatar'
-                  title='This is also how my wife thinks I look'
-                />
-              </figure>
+              <Avatar />
             </div>
             <div>
-              <div className='content has-font-family-serif'>
-                <h1 className='title mt-4'>
+              <div className='content'>
+                <h1 className='title mt-4 has-text-primary is-family-serif'>
                   Hi, my name is <span className='p-given-name'>Alberto</span>
                 </h1>
-                <h2 className='subtitle'>
+                <h2 className='subtitle has-text-primary is-family-serif'>
                   also known as{' '}
                   <span className='is-family-code p-nickname'>threkk</span>
                 </h2>
@@ -40,12 +39,12 @@ export default function Home() {
                   <span
                     style={{
                       textDecoration: 'line-through',
-                      opacity: 0.6,
+                      opacity: 0.6
                     }}
                   >
                     Internet Plumber
                   </span>{' '}
-                  <span className='p-role'>Software Engineer</span> from Spain
+                  <span className='p-role'>Software Engineer</span>{' '}
                   based in <span className='p-city'>Amsterdam</span>,{' '}
                   <span className='p-country-name'>The Netherlands</span>.
                   Currently, I am working at{' '}
@@ -65,7 +64,7 @@ export default function Home() {
                 <ul
                   style={{
                     display: 'flex',
-                    listStyle: 'none',
+                    listStyle: 'none'
                   }}
                   className='is-justify-content-right is-align-content-center'
                 >

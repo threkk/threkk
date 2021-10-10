@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 
@@ -16,8 +15,8 @@ const LINKS: NavLink[] = [
   { text: 'Articles', href: 'https://threkk.medium.com/' },
   {
     text: 'Now',
-    href: 'https://www.notion.so/threkk/Now-f120106f4eea4f6895589f061cb548ad',
-  },
+    href: 'https://www.notion.so/threkk/Now-f120106f4eea4f6895589f061cb548ad'
+  }
 ]
 
 const EXTERNAL_LINK = (
@@ -26,21 +25,21 @@ const EXTERNAL_LINK = (
   </span>
 )
 
-function isExternalLink(u: string): boolean {
+function isExternalLink (u: string): boolean {
   try {
-    const url = new URL(u)
+    new URL(u)
     return true
   } catch {
     return false
   }
 }
 
-export default function Navbar() {
+export default function Navbar () {
   const router = useRouter()
   const [isActive, setActive] = useState(false)
   const toggleActive = () => setActive(!isActive)
 
-  const links = LINKS.map((page, idx) => (
+  const links = LINKS.map((page) => (
     <Link key={page.text} href={page.href}>
       <a
         className={`navbar-item ${
