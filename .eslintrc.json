@@ -1,6 +1,7 @@
 {
-  "extends": [ 
-    "standard",
-    "next/core-web-vitals"
-  ]
+  "extends": ["next", "standard", "prettier", "next/core-web-vitals"],
+  "globals": {
+    "JSX": true,
+    "React": true
+  }
 }
