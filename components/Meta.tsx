@@ -14,7 +14,7 @@ interface HeadProps {
   canonical?: string
 }
 
-export default function PageHead (props?: HeadProps) {
+export default function PageHead(props?: HeadProps) {
   const { title, description, cover, canonical } = props
   const router = useRouter()
 
@@ -26,6 +26,7 @@ export default function PageHead (props?: HeadProps) {
 
       <meta name='title' content={title ?? BASE_TITLE} />
       <meta name='description' content={description ?? BASE_DESCRIPTION} />
+      <meta name='theme-color' content='#43846d' />
 
       <meta property='og:type' content='website' />
       <meta property='og:url' content={url.toString()} />
