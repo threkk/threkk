@@ -1,6 +1,8 @@
 {
-  "name": "",
-  "short_name": "",
+  "name": "threkk",
+  "short_name": "threkk",
+  "description": "threkk's personal website",
+  "start_url": "/",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
