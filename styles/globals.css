@@ -34,9 +34,11 @@
 
 /* Common */
 :root {
-  --primary: #56aa8c !important;
-  --primary-hover: #86b0a1 !important;
-  --primary-focus: #527e6e !important;
+  --primary: #56aa8c !important; /* Base color */
+  --primary-hover: #86b0a1 !important; /* Omatsuri 2 shades lighter */
+  --primary-focus: #527e6e !important; /* Omatsuri 2 shades darker */
+
+  /* Default non-serif + Inter */
   --font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', 'Roboto',
     'Ubuntu', 'Cantarell', 'Noto Sans', sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -46,7 +48,24 @@ pre,
 code,
 kbd,
 samp {
+  /* Default monospace + Fira Code */
   --font-family: 'Fira Code', 'Menlo', 'Consolas', 'Roboto Mono',
     'Ubuntu Monospace', 'Noto Mono', 'Oxygen Mono', 'Liberation Mono', monospace,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/* Extras */  
+@media (min-width: 992px) {
+  main .grid.about {
+    grid-column-gap: 3rem;
+    grid-template-columns: 25% auto;
+  }
+}
+
+a[role='button'].full {
+  width: 100%;
+}
+
+img.u-photo {
+  border-radius: calc(var(--border-radius) * 2);
 }

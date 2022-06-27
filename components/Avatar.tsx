@@ -1,22 +1,18 @@
 import Image from 'next/image'
-import avatarBW from '../public/avatar/avatar_bw.jpg'
+import avatarBW from '../public/avatar/avatar_bw_original.jpg'
 
 export default function Avatar() {
-  const width = 128
-  const height = Math.ceil(width / (3 / 4))
-  const image = (
-    <Image
-      className='is-rounded u-photo'
-      src={avatarBW}
-      width={width}
-      height={height}
-      alt='Yup, that is me'
-    />
-  )
-
+  const aspectRatio = {
+    width: '75%',
+    height: 'auto',
+    aspectRatio: '3/4',
+    margin: 'auto'
+  }
   return (
-    <figure className='image' style={{ width, height }}>
-      {image}
-    </figure>
+    <ul>
+      <li style={aspectRatio}>
+        <Image className='u-photo' src={avatarBW} alt='Yup, that is me' />
+      </li>
+    </ul>
   )
 }

@@ -1,16 +1,16 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useState } from 'react'
 import Logo from '../public/default-monochrome.svg'
 import Image from 'next/image'
 
-const LINKS: {
+type Link = {
   text: string
   href: string
   disabled?: boolean
-}[] = [
+}
+
+const LINKS: Link[] = [
   { text: 'About', href: '/' },
-  // { text: 'About', href: '/about' },
   { text: 'Projects', href: 'https://github.com/threkk/' },
   { text: 'Articles', href: 'https://threkk.medium.com/' },
   {
@@ -20,8 +20,8 @@ const LINKS: {
 ]
 
 const ExternalLink = (
-  <span className='icon is-small ml-1 is-unselectable' style={{ opacity: 0.3 }}>
-    <i className='fas fa-fw fa-external-link-alt'></i>
+  <span className='icon is-small is-unselectable' style={{ opacity: 0.3 }}>
+    <i className='fa-solid fa-fw fa-external-link-alt'></i>
   </span>
 )
 
@@ -37,52 +37,36 @@ function isExternalLink(u: string): boolean {
 
 export default function Navbar() {
   const router = useRouter()
-  const [isActive, setActive] = useState(false)
-  const toggleActive = () => setActive(!isActive)
+  const isSelected = (page: Link) => router.pathname === page.href
 
   const links = LINKS.map((page) => (
-    <Link key={page.text} href={page.href}>
-      <a
-        className={`navbar-item ${
-          router.pathname === page.href ? 'has-text-weight-bold' : ''
-        }`}
-      >
-        {page.text}
-        {isExternalLink(page.href) ? ExternalLink : ''}
-      </a>
-    </Link>
+    <li key={page.href}>
+      <Link key={page.text} href={page.href}>
+        <a>
+          {isSelected(page) ? <strong>{page.text}</strong> : page.text}
+          {isExternalLink(page.href) ? ExternalLink : ''}
+        </a>
+      </Link>
+    </li>
   ))
 
   return (
     <>
-      <nav
-        className='navbar is-transparent'
-        role='navigation'
-        aria-label='main navigation'
-      >
-        <div className='container'>
-          <div className='navbar-brand'>
+      <nav>
+        <ul>
+          <li>
             <Link href='https://threkk.com'>
-              <a className='navbar-item u-url'>
-                <Image src={Logo} alt="threkk.com's website logo" />
+              <a>
+                <Image
+                  src={Logo}
+                  alt="threkk.com's website logo"
+                  layout='intrinsic'
+                />
               </a>
             </Link>
-            <a
-              onClick={toggleActive}
-              role='button'
-              aria-label='menu'
-              aria-expanded='false'
-              className={`navbar-burger burger ${isActive ? 'is-active' : ''}`}
-            >
-              <span></span>
-              <span></span>
-              <span></span>
-            </a>
-          </div>
-          <div className={`navbar-menu ${isActive ? 'is-active' : ''}`}>
-            <div className='navbar-end'>{links}</div>
-          </div>
-        </div>
+          </li>
+        </ul>
+        <ul>{links}</ul>
       </nav>
     </>
   )

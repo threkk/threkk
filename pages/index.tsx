@@ -22,32 +22,30 @@ From time to time I also build [things](https://github.com/threkk).`
   return (
     <div className='h-card'>
       <Meta />
-      <Navbar />
-      <section className='container my-6'>
-        <div className='columns is-centered is-tablet'>
-          <section className='column is-one-quarter'>
-            <div className='is-flex is-flex-direction-column is-align-items-center'>
-              <div>
-                <Avatar />
-              </div>
-              <div>
-                <Social />
-              </div>
-            </div>
-          </section>
-          <section className='column mx-2'>
-            <h1 className='title is-2 mt-4 has-text-primary is-family-serif'>
+      <header>
+        <Navbar />
+      </header>
+      <main className='container'>
+        <div className='grid about'>
+          <aside>
+            <Avatar />
+            <Social />
+          </aside>
+          <section>
+            <hgroup>
+            <h1>
               Hi, my name is <span className='p-given-name'>Alberto</span>{' '}
               <span className='p-family-name'>de Murga</span>
             </h1>
-            <h2 className='subtitle has-text-primary is-family-serif'>
+            <h2 className='subtitle has-text-primary'>
               also known as{' '}
               <span className='is-family-code p-nickname'>threkk</span>
             </h2>
+            </hgroup>
             <Markdown md={content} />
           </section>
         </div>
-      </section>
+      </main>
     </div>
   )
 }
