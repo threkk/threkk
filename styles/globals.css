@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+/* // Content configuration */
+/* $content-heading-color: $primary; */
+/* $content-blockquote-background-color: $dark; */
+/* $content-blockquote-padding: 0 1.25em; */
+/* $content-pre-padding: 0; */
+
+/* $family-monospace: 'Fira Code', monospace; */
+
+@import '../node_modules/@picocss/pico/css/pico.css';
+@import '../public/fonts/inter/inter.css';
+@import '../public/fonts/firacode/fira_code.css';
+
+/* Dark by default */
+[data-theme='dark'],
+:root:not([data-theme='light']) {
+  color-scheme: dark;
+  --primary-inverse: #242424 !important;
+  --background-color: #242424;
+}
+
+/* Light if preferred and not forced */
+@media only screen and (prefers-color-scheme: light) {
+  :root:not([data-theme='dark']) {
+    --primary-invese: #f5f5f5 !important;
+    --background-color: #f5f5f5 !important;
+  }
+}
+[data-theme='light'] {
+  --primary-invese: #f5f5f5 !important;
+  --background-color: #f5f5f5 !important;
+}
+
+/* Common */
+:root {
+  --primary: #56aa8c !important;
+  --primary-hover: #86b0a1 !important;
+  --primary-focus: #527e6e !important;
+  --font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', 'Roboto',
+    'Ubuntu', 'Cantarell', 'Noto Sans', sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+pre,
+code,
+kbd,
+samp {
+  --font-family: 'Fira Code', 'Menlo', 'Consolas', 'Roboto Mono',
+    'Ubuntu Monospace', 'Noto Mono', 'Oxygen Mono', 'Liberation Mono', monospace,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
