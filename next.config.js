@@ -3,5 +3,11 @@ module.exports = {
   //   locales: ['en', 'es', 'fr', 'nl', 'kr'],
   //   defaultLocale: 'en',
   // },
-  poweredByHeader: false
+  poweredByHeader: false,
+  reactStrictMode: true,
+  experimental: {
+    images: {
+      allowFutureImage: true,
+    },
+  },
 }
