@@ -1,15 +1,17 @@
+import Image from 'next/future/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import Logo from '../public/default-monochrome.svg'
-import Image from 'next/image'
+import { useDarkMode } from '../lib/useDarkMode'
+import LogoLight from '../public/default-monochrome-black.svg'
+import LogoDark from '../public/default-monochrome-white.svg'
 
-type Link = {
+type MenuItem = {
   text: string
   href: string
   disabled?: boolean
 }
 
-const LINKS: Link[] = [
+const LINKS: MenuItem[] = [
   { text: 'About', href: '/' },
   { text: 'Projects', href: 'https://github.com/threkk/' },
   { text: 'Articles', href: 'https://threkk.medium.com/' },
@@ -20,9 +22,10 @@ const LINKS: Link[] = [
 ]
 
 const ExternalLink = (
-  <span className='icon is-small is-unselectable' style={{ opacity: 0.3 }}>
-    <i className='fa-solid fa-fw fa-external-link-alt'></i>
-  </span>
+  <i
+    className='fa-solid fa-external-link-alt'
+    style={{ opacity: 0.3, userSelect: 'none', marginLeft: '0.3rem' }}
+  ></i>
 )
 
 function isExternalLink(u: string): boolean {
@@ -37,12 +40,15 @@ function isExternalLink(u: string): boolean {
 
 export default function Navbar() {
   const router = useRouter()
-  const isSelected = (page: Link) => router.pathname === page.href
+  const isDarkMode = useDarkMode()
+  const isSelected = (page: MenuItem) => router.pathname === page.href
+
+  const Logo = isDarkMode ? LogoDark : LogoLight
 
   const links = LINKS.map((page) => (
     <li key={page.href}>
       <Link key={page.text} href={page.href}>
-        <a>
+        <a style={{ whiteSpace: 'nowrap' }}>
           {isSelected(page) ? <strong>{page.text}</strong> : page.text}
           {isExternalLink(page.href) ? ExternalLink : ''}
         </a>
@@ -60,12 +66,20 @@ export default function Navbar() {
                 <Image
                   src={Logo}
                   alt="threkk.com's website logo"
-                  layout='intrinsic'
+                  priority={true}
+                  style={{
+                    width: 'auto',
+                    height: '2rem',
+                  }}
                 />
               </a>
             </Link>
           </li>
         </ul>
+        <label htmlFor='menu' tabIndex={0}>
+          <i className='fa-solid fa-2x fa-burger'></i>
+        </label>
+        <input id='menu' type='checkbox' />
         <ul>{links}</ul>
       </nav>
     </>
