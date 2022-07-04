@@ -54,7 +54,7 @@ samp {
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
-/* Extras */  
+/* Extras */
 @media (min-width: 992px) {
   main .grid.about {
     grid-column-gap: 3rem;
@@ -66,6 +66,55 @@ a[role='button'].full {
   width: 100%;
 }
 
-img.u-photo {
+/* Pictures have round corners */
+img {
   border-radius: calc(var(--border-radius) * 2);
+}
+
+nav {
+  margin-left: var(--spacing);
+  margin-right: var(--spacing);
+}
+
+/* Hamburger menu */
+nav input[type='checkbox'],
+nav label {
+  display: none;
+}
+
+@media (max-width: 576px) {
+  input[type='checkbox']:checked + ul {
+    display: none;
+  }
+
+  nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  nav label {
+    text-align: right;
+    display: block;
+    padding: calc(var(--form-element-spacing-vertical) * 0.5)
+      var(--form-element-spacing-horizontal);
+  }
+
+  nav ul {
+    display: block;
+  }
+
+  nav ul:last-child {
+    width: 100%;
+    flex-basis: 100%;
+  }
+
+  nav ul li {
+    margin-bottom: 0;
+    width: 100%;
+    text-align: right;
+    padding: calc(var(--form-element-spacing-vertical) * 0.5)
+      var(--form-element-spacing-horizontal);
+  }
 }

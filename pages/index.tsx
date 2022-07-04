@@ -33,14 +33,14 @@ From time to time I also build [things](https://github.com/threkk).`
           </aside>
           <section>
             <hgroup>
-            <h1>
-              Hi, my name is <span className='p-given-name'>Alberto</span>{' '}
-              <span className='p-family-name'>de Murga</span>
-            </h1>
-            <h2 className='subtitle has-text-primary'>
-              also known as{' '}
-              <span className='is-family-code p-nickname'>threkk</span>
-            </h2>
+              <h1>
+                Hi, my name is <span className='p-given-name'>Alberto</span>{' '}
+                <span className='p-family-name'>de Murga</span>
+              </h1>
+              <h2 className='subtitle has-text-primary'>
+                also known as{' '}
+                <span className='is-family-code p-nickname'>threkk</span>
+              </h2>
             </hgroup>
             <Markdown md={content} />
           </section>
