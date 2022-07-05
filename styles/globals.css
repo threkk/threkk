@@ -83,7 +83,7 @@ nav label {
 }
 
 @media (max-width: 576px) {
-  input[type='checkbox']:checked + ul {
+  input[type='checkbox']:not(:checked) + ul {
     display: none;
   }
 
