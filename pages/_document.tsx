@@ -8,7 +8,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang='en'>
         <Head>
           <meta name='robots' content='index,follow,noodp' />
           <meta name='googlebot' content='index,follow' />
