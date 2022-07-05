@@ -43,7 +43,7 @@ start more books than I finish, and paint less than I believe. From time to time
                 </samp>
               </h2>
             </hgroup>
-            <Markdown md={content} />
+            <Markdown md={content} className='p-note' />
           </section>
         </div>
       </main>

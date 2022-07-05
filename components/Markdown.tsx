@@ -8,16 +8,17 @@ import remarkGfm from 'remark-gfm'
 
 //
 // Component
-export default function Markdown(props: { md: string }): JSX.Element {
-  const { md } = props
-  return mdToJSX(md)
+export default function Markdown(props: { md: string, className: string }): JSX.Element {
+  const { md, className } = props
+  return mdToJSX(md, className)
 }
 
-export function mdToJSX(input: string): JSX.Element {
+export function mdToJSX(input: string, className: string): JSX.Element {
   return (
     <ReactMarkdown
       rehypePlugins={[rehypeRaw]}
       remarkPlugins={[remarkGfm]}
+      className={className}
       components={{
         a({ node, href, title, target, children, ...props }) {
           return (
