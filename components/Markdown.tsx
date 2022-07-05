@@ -6,21 +6,16 @@ import nord from 'react-syntax-highlighter/dist/cjs/styles/prism/nord'
 import rehypeRaw from 'rehype-raw'
 import remarkGfm from 'remark-gfm'
 
-type Size = 'small' | 'normal' | 'medium' | 'large'
-
+//
 // Component
-export default function Markdown(props: {
-  md: string
-  size?: Size
-}): JSX.Element {
-  const { md, size } = props
-  return mdToJSX(md, { size })
+export default function Markdown(props: { md: string }): JSX.Element {
+  const { md } = props
+  return mdToJSX(md)
 }
 
-export function mdToJSX(input: string, config: { size?: Size }): JSX.Element {
+export function mdToJSX(input: string): JSX.Element {
   return (
     <ReactMarkdown
-      className={`content is-${config.size ?? 'normal'}`} // Bulma content class.
       rehypePlugins={[rehypeRaw]}
       remarkPlugins={[remarkGfm]}
       components={{
@@ -33,6 +28,7 @@ export function mdToJSX(input: string, config: { size?: Size }): JSX.Element {
             </Link>
           )
         },
+        del: 's',
         // TODO: Create a loader based on the CMS
         // TODO: Add a blur effect for the image
         img({ node, src, title, ...props }) {
@@ -47,7 +43,7 @@ export function mdToJSX(input: string, config: { size?: Size }): JSX.Element {
             />
           )
         },
-        code({ node, inline, children, className /* ...props */ }) {
+        code({ inline, children, className }) {
           if (inline || !className) {
             return <kbd>{children}</kbd>
           } else {
@@ -62,7 +58,7 @@ export function mdToJSX(input: string, config: { size?: Size }): JSX.Element {
                   borderRadius: 0
                 }}
               >
-                {children}
+                {String(children).replace(/\n$/, '')}
               </SyntaxHighlighter>
             )
           }

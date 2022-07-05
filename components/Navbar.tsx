@@ -79,7 +79,7 @@ export default function Navbar() {
         <label htmlFor='menu' tabIndex={0}>
           <i className='fa-solid fa-2x fa-burger'></i>
         </label>
-        <input id='menu' type='checkbox' />
+        <input id='menu' type='checkbox' defaultChecked={false} />
         <ul>{links}</ul>
       </nav>
     </>
