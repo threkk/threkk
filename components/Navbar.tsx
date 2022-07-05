@@ -17,8 +17,8 @@ const LINKS: MenuItem[] = [
   { text: 'Articles', href: 'https://threkk.medium.com/' },
   {
     text: 'Now',
-    href: 'https://www.notion.so/threkk/Now-f120106f4eea4f6895589f061cb548ad',
-  },
+    href: 'https://www.notion.so/threkk/Now-f120106f4eea4f6895589f061cb548ad'
+  }
 ]
 
 const ExternalLink = (
@@ -69,7 +69,7 @@ export default function Navbar() {
                   priority={true}
                   style={{
                     width: 'auto',
-                    height: '2rem',
+                    height: '2rem'
                   }}
                 />
               </a>

@@ -7,17 +7,16 @@ import Social from '../components/Social'
 export default function Home() {
   const content = `I am a ~~Internet Plumber~~ <span class='p-role'>Software Engineer</span>
 based in <span class='p-locality'>Amsterdam</span>, <span class='p-country-name'>
-The Netherlands</span>. Currently, I am working at [<span class='p-org has-text-primary'>
+The Netherlands</span>, where I work at [<span class='p-org'>
 Booking.com</span>](https://booking.com) as <span class='p-job-title'>
-full stack developer</span> on experimentation quality.
+full stack Software Engineer</span> on improving experimentation quality.
 
-I [write](https://threkk.medium.com) about *nix, JavaScript and Go among others. 
-I also collaborate in open source projects like [asdf](https://asdf-vm.com).
-In the past, I spent long time researching about static analysis in Javascript,
-focusing on detecting dead code.
+I [have a blog](https://threkk.medium.com) where I write about *nix, git, JavaScript and Go among others. 
+In the past, I researched about [static analysis](https://github.com/threkk/prune.js) in JavaScript focusing on detecting dead code.
 
-In my free time, I am an avid reader, games and e-sports aficionado and ok painter.
-From time to time I also build [things](https://github.com/threkk).`
+In my free time, I study Korean (<span lang='ko'>저는 초보자예요</span>), play more videogames that I should,
+start more books than I finish, and paint less than I believe. From time to time I also 
+[build things](https://github.com/threkk).`
 
   return (
     <div className='h-card'>
@@ -37,9 +36,11 @@ From time to time I also build [things](https://github.com/threkk).`
                 Hi, my name is <span className='p-given-name'>Alberto</span>{' '}
                 <span className='p-family-name'>de Murga</span>
               </h1>
-              <h2 className='subtitle has-text-primary'>
+              <h2>
                 also known as{' '}
-                <span className='is-family-code p-nickname'>threkk</span>
+                <samp className='p-nickname'>
+                  <strong>threkk</strong>
+                </samp>
               </h2>
             </hgroup>
             <Markdown md={content} />

@@ -6,7 +6,7 @@ export default function Avatar() {
     width: '75%',
     height: 'auto',
     aspectRatio: '3/4',
-    margin: 'auto',
+    margin: 'auto'
   }
   return (
     <ul>

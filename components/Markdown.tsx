@@ -59,14 +59,14 @@ export function mdToJSX(input: string, config: { size?: Size }): JSX.Element {
                 showLineNumbers={true}
                 customStyle={{
                   margin: 0,
-                  borderRadius: 0,
+                  borderRadius: 0
                 }}
               >
                 {children}
               </SyntaxHighlighter>
             )
           }
-        },
+        }
       }}
     >
       {input}
