@@ -1,4 +1,4 @@
-import Image from 'next/future/image'
+import Image from 'next/image'
 import { useMobile } from '../lib/useMobile'
 import avatarBW from '../public/avatar/avatar_bw_original.jpg'
 

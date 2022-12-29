@@ -17,12 +17,6 @@ const config = withMDX({
   // },
   poweredByHeader: false,
   reactStrictMode: true,
-  experimental: {
-    images: {
-      allowFutureImage: true
-    }
-  },
-  amp: false,
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx']
 })
 

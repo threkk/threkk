@@ -1,4 +1,4 @@
-import Image from 'next/future/image'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useDarkMode } from '../lib/useDarkMode'
@@ -47,11 +47,9 @@ export default function Navbar() {
 
   const links = LINKS.map((page) => (
     <li key={page.href}>
-      <Link key={page.text} href={page.href}>
-        <a style={{ whiteSpace: 'nowrap' }}>
+      <Link key={page.text} href={page.href} style={{ whiteSpace: 'nowrap' }}>
           {isSelected(page) ? <strong>{page.text}</strong> : page.text}
           {isExternalLink(page.href) ? ExternalLink : ''}
-        </a>
       </Link>
     </li>
   ))
@@ -62,7 +60,6 @@ export default function Navbar() {
         <ul>
           <li>
             <Link href='https://threkk.com'>
-              <a>
                 <Image
                   src={Logo}
                   alt="threkk.com's website logo"
@@ -72,7 +69,6 @@ export default function Navbar() {
                     height: '2rem'
                   }}
                 />
-              </a>
             </Link>
           </li>
         </ul>

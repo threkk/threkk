@@ -1,5 +1,5 @@
 import { MDXProvider } from '@mdx-js/react'
-import Image from 'next/future/image'
+import Image from 'next/image'
 import Link from 'next/link'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import nord from 'react-syntax-highlighter/dist/cjs/styles/prism/nord'
@@ -16,10 +16,8 @@ export default function Markdown(props: any) {
 const components = {
   a({ node, href, title, target, children, ...props }) {
     return (
-      <Link href={href}>
-        <a {...props} title={title ?? href}>
+      <Link {...props} title={title ?? href} href={href}>
           {children}
-        </a>
       </Link>
     )
   },
