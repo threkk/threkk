@@ -48,8 +48,8 @@ export default function Navbar() {
   const links = LINKS.map((page) => (
     <li key={page.href}>
       <Link key={page.text} href={page.href} style={{ whiteSpace: 'nowrap' }}>
-          {isSelected(page) ? <strong>{page.text}</strong> : page.text}
-          {isExternalLink(page.href) ? ExternalLink : ''}
+        {isSelected(page) ? <strong>{page.text}</strong> : page.text}
+        {isExternalLink(page.href) ? ExternalLink : ''}
       </Link>
     </li>
   ))
@@ -59,16 +59,16 @@ export default function Navbar() {
       <nav>
         <ul>
           <li>
-            <Link href='https://threkk.com'>
-                <Image
-                  src={Logo}
-                  alt="threkk.com's website logo"
-                  priority={true}
-                  style={{
-                    width: 'auto',
-                    height: '2rem'
-                  }}
-                />
+            <Link href='/'>
+              <Image
+                src={Logo}
+                alt="threkk.com's website logo"
+                priority={true}
+                style={{
+                  width: 'auto',
+                  height: '2rem'
+                }}
+              />
             </Link>
           </li>
         </ul>

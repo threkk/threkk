@@ -17,7 +17,7 @@ const components = {
   a({ node, href, title, target, children, ...props }) {
     return (
       <Link {...props} title={title ?? href} href={href}>
-          {children}
+        {children}
       </Link>
     )
   },

@@ -1,12 +1,11 @@
-import nextMDX  from '@next/mdx'
+import nextMDX from '@next/mdx'
 import remarkGfm from 'remark-gfm'
-
 
 const withMDX = nextMDX({
   extension: /\.mdx?$/,
   options: {
     remarkPlugins: [remarkGfm],
-    providerImportSource: '@mdx-js/react',
+    providerImportSource: '@mdx-js/react'
   }
 })
 
