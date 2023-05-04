@@ -13,12 +13,12 @@ type MenuItem = {
 
 const LINKS: MenuItem[] = [
   { text: 'About', href: '/' },
-  { text: 'Projects', href: 'https://github.com/threkk/' },
   { text: 'Articles', href: '/articles' },
-  {
-    text: 'Now',
-    href: 'https://www.notion.so/threkk/Now-f120106f4eea4f6895589f061cb548ad'
-  }
+  { text: 'Projects', href: 'https://github.com/threkk/' }
+  // {
+  //   text: 'Now',
+  //   href: 'https://www.notion.so/threkk/Now-f120106f4eea4f6895589f061cb548ad'
+  // }
 ]
 
 const ExternalLink = (

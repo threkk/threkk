@@ -19,7 +19,7 @@ export default function Social() {
         <li>
           <Link
             href='https://mastodon.social/@threkk'
-            className='full'
+            className='full u-url'
             title='mastodon'
             rel='me'
             role='button'
@@ -33,7 +33,7 @@ export default function Social() {
             title='github'
             rel='me'
             role='button'
-            className='full'
+            className='full u-url'
           >
             <i className='fa-brands fa-github-square' /> Github
           </Link>
@@ -41,7 +41,7 @@ export default function Social() {
         <li>
           <Link
             href='https://threkk.medium.com/'
-            className='full'
+            className='full u-url'
             title='medium'
             rel='me'
             role='button'
@@ -52,7 +52,7 @@ export default function Social() {
         <li>
           <Link
             href='https://twitter.com/threkk/'
-            className='full'
+            className='full u-url'
             title='twitter'
             rel='me'
             role='button'

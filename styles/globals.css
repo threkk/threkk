@@ -23,12 +23,12 @@
 /* Light if preferred and not forced */
 @media only screen and (prefers-color-scheme: light) {
   :root:not([data-theme='dark']) {
-    --primary-invese: #f5f5f5 !important;
+    --primary-inverse: #f5f5f5 !important;
     --background-color: #f5f5f5 !important;
   }
 }
 [data-theme='light'] {
-  --primary-invese: #f5f5f5 !important;
+  --primary-inverse: #f5f5f5 !important;
   --background-color: #f5f5f5 !important;
 }
 
@@ -70,6 +70,14 @@ samp {
 
 a[role='button'].full {
   width: 100%;
+}
+
+/* Articles list */
+
+li kbd {
+  padding: 0.15rem;
+  color: inherit;
+  background: inherit;
 }
 
 /* Pictures have round corners */

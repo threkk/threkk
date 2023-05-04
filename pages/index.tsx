@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <div className='h-card'>
       <Meta />
-      <main className='container'>
+      <div className='container'>
         <div className='grid about'>
           <aside>
             <Avatar />
@@ -39,7 +39,7 @@ export default function Home() {
             </div>
           </section>
         </div>
-      </main>
+      </div>
     </div>
   )
 }
