@@ -1,11 +1,42 @@
-# Hi, my name is Alberto de Murga
+# Nuxt 3 Minimal Starter
 
-> also known as threkk
+Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-I am a ~~Internet Plumber~~ <span class='p-role'>Software Engineer</span> based in <span class='p-locality'>Amsterdam</span>, <span class='p-country-name'>The Netherlands</span>, where I work at [<span class='p-org'>
-Booking.com</span>](https://booking.com 'https://booking.com') as <span class='p-job-title'>
-full stack Software Engineer</span> making experimentation and A/B testing better.
+## Setup
 
-I like to [make things](https://github.com/threkk), and sometimes I [write about it](https://threkk.medium.com). In the past, I researched about [static analysis](https://github.com/threkk/prune.js 'https://github.com/threkk/prune.js') in JavaScript focusing on detecting dead code.
+Make sure to install the dependencies:
 
-I am also insterested in learning languages (currently Korean), video games (RPG, roguelites), miniature painting (Games Workshop, Para Bellum), TTRPG, and a fantasy fiction books.
+```bash
+# yarn
+yarn install
+
+# npm
+npm install
+
+# pnpm
+pnpm install
+```
+
+## Development Server
+
+Start the development server on `http://localhost:3000`
+
+```bash
+npm run dev
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+npm run build
+```
+
+Locally preview production build:
+
+```bash
+npm run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
